@@ -15,16 +15,20 @@ public class BorderSumArray {
 			System.out.println();
 		}
 		
+		System.out.println();
+		
 		for(int i = 0; i<arr.length; i++)
 		{
 			for(int j = 0; j<arr.length ; j++)
 			{	
+				System.out.print(arr[j][i] + " ");
 				if(i == 0 || i == 3) 
 				{
 					sum = sum + arr[i][j];
 					sum = sum + arr[j][i];
 				}
 			}
+			System.out.println();
 		}
 		
 		System.out.println("Sum is : " + sum);
