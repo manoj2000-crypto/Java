@@ -1,8 +1,8 @@
 
 public class BorderSumArray {
-
-	public static void main(String[] args) {
-		
+	
+	public void borderSum() 
+	{
 		int[][] arr = {{1,2,3,4},{2,3,4,5},{5,6,7,8},{1,1,1,1}};
 		int sum = 0;
 		
@@ -32,6 +32,12 @@ public class BorderSumArray {
 		}
 		
 		System.out.println("Sum is : " + sum);
+	}
+
+	public static void main(String[] args) {
+		
+		BorderSumArray bsa = new BorderSumArray();
+		bsa.borderSum();
 		
 	}
 
