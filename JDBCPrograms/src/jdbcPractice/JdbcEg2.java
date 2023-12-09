@@ -21,15 +21,18 @@ public class JdbcEg2 {
 
 		System.out.println("Choose given option to perform CRUD operation :");
 		int option = 0;
+		
 		while (true) {
 
 			System.out.print("\nType 1.Read \t 2.Insert \t 3.Update \t 4.Delete \t 5.Exit: ");
 			try {
 				option = scanObj.nextInt();
 			} catch (InputMismatchException imme) {
-				System.out.println("You have given wrong input !");
-				System.out.print("Choose correct option again : ");
-				option = scanObj.nextInt();
+				System.out.println("You have given wrong input! ");
+				System.out.println("Choose correct option again! ");
+				scanObj.next(); //Clear the invalid input
+				//Restart the loop to allow the user to input the correct option
+				continue;
 			}
 
 			switch (option) {
