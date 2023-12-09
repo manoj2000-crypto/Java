@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class JdbcEg2 {
@@ -19,11 +20,17 @@ public class JdbcEg2 {
 		// Scanner menuDrivenScanner = new Scanner(System.in);
 
 		System.out.println("Choose given option to perform CRUD operation :");
-
+		int option = 0;
 		while (true) {
 
 			System.out.print("\nType 1.Read \t 2.Insert \t 3.Update \t 4.Delete \t 5.Exit: ");
-			int option = scanObj.nextInt();
+			try {
+				option = scanObj.nextInt();
+			} catch (InputMismatchException imme) {
+				System.out.println("You have given wrong input !");
+				System.out.print("Choose correct option again : ");
+				option = scanObj.nextInt();
+			}
 
 			switch (option) {
 
@@ -52,6 +59,8 @@ public class JdbcEg2 {
 					System.out.println("Delete operation failed.");
 				else if (confirm.equals("YES"))
 					deleteRecordByEmployeeId(connection);
+				else
+					System.out.println("Type \'YES\' correctly.");
 				break;
 
 			case 5:
